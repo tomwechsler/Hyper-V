@@ -1,7 +1,7 @@
 ﻿Set-Location E:\
 Clear-Host
 
-Get-VMSwitch  * | Format-Table Name
+Get-VMSwitch * | Format-Table Name
 
 #create a virtual computer with an existing virtual hard disk
 New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath .\VMs\Win10.vhdx -Path .\VMData -Generation 2 -Switch vSwitch01
