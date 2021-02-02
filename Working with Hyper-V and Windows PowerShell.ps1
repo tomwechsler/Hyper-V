@@ -40,3 +40,16 @@ $VMName = "VMNAME"
  }
 
  New-VM @VM
+
+#Measure
+Enable-VMResourceMetering -VMName vmsrv01
+
+Measure-VM vmsrv01
+
+Measure-VM vmsrv01 | fl
+
+Measure-VM vmsrv01 | Select-Object -ExpandProperty NetworkMeteredTrafficReport
+
+Reset-VMResourceMetering -VMName vmsrv01
+
+Disable-VMResourceMetering -VMName vmsrv01
